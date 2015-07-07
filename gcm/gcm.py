@@ -225,6 +225,8 @@ class GCM(object):
                 "A Registration ID is tied to a certain group of senders")
         elif error == 'MessageTooBig':
             raise GCMMessageTooBigException("Message can't exceed 4096 bytes")
+        elif error == 'MissingRegistration':
+            raise GCMMissingRegistrationException("Missing registration_ids")
 
     def handle_plaintext_response(self, response):
 
